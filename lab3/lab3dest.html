@@ -18,13 +18,14 @@
             const outputDiv = document.getElementById("resultOutput");
             if(queryValue) {
                 outputDiv.innerHTML = 
-                <p>Query Value: ${queryValue}</p>;
+                <p>Query Value: ${queryValue}</p>
+                ;
             }
             else {
-                outputDiv.innerHTML =
-                <p>Go back to previous page to input data</p>
-                
-                <a href="lab3.html">Back</a>
+                outputDiv.innerHTML = `
+                    <p>Go back to previous page to input data</p>
+                    <a href="lab3.html">Back</a>
+                `;
             }
         </script>
     </body>
