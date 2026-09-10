@@ -15,11 +15,11 @@
             const urlParams = new URLSearchParams(queryString);
             const queryValue = urlParams.get("query");
 
-            const outputDiv = document.getElementById("resultOutput");
+           const outputDiv = document.getElementById("resultOutput");
             if(queryValue) {
-                outputDiv.innerHTML =  '
-                <p>Query Value: ${queryValue}</p>'
-                ;
+                outputDiv.innerHTML = `
+                    <p>Query value: ${queryValue}</p>
+                `;
             }
             
             else {
