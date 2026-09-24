@@ -11,12 +11,12 @@ function withdraw() {
     if(playerHealth > 0)
     {
         healthText.innerText = playerHealth;
-        statusText.innerText = "You've been hit!";
+        statusText.innerText = "Spent Money";
     }
     else
     {
         healthText.innerText = 0;
-        statusText.innerText = "Game Over!";
+        statusText.innerText = "No More Money To Spend";
         statusText.style.color = "#f53748";
         statusText.style.fontWeight = "bold";
 
@@ -28,5 +28,16 @@ function withdraw() {
 }
 
 function deposit() {
+        playerHealth = playerHealth + withdrawAmount; 
+
+    const healthText = document.getElementById("money-display");
+    const statusText = document.getElementById("status-message");
+
+   
+    if(playerHealth > 1000)
+    {
+        healthText.innerText = playerHealth;
+        statusText.innerText = "Deposited Money";
     
+    }
 }
