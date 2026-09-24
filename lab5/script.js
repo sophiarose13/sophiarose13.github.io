@@ -34,7 +34,7 @@ function deposit() {
     const statusText = document.getElementById("status-message");
 
    
-    if(playerHealth >= 1000)
+    if(playerHealth >= 0)
     {
         healthText.innerText = playerHealth;
         statusText.innerText = "Deposited Money";
