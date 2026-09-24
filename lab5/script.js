@@ -1,10 +1,10 @@
-let playerHealth = 100;
-const damageAmount = 30;
+let playerHealth = 1000;
+const withdrawAmount = 30;
 
-function takeDamage() {
-    playerHealth = playerHealth - damageAmount; 
+function withdraw() {
+    playerHealth = playerHealth - withdrawAmount; 
 
-    const healthText = document.getElementById("health-display");
+    const healthText = document.getElementById("money-display");
     const statusText = document.getElementById("status-message");
 
    
@@ -25,4 +25,8 @@ function takeDamage() {
         document.querySelector("button").disabled =true;
         document.querySelector("button").innerText = "Dead";
     }
+}
+
+function deposit() {
+    
 }
