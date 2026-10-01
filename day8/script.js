@@ -17,9 +17,9 @@ function loadInventory() {
 
     let htmlToInject = "<li>" + currentItem + "</li>";
 
-    listElement += htmlToInject;
+    listElement.innerHTML += htmlToInject;
    }
 
    document.querySelector("button").disabled = true;
-   document.querySelector("button").innerText = "Backpack Full"
+   document.querySelector("button").innerText = "Backpack Full";
 }
