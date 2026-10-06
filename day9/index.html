@@ -4,7 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Day Checklist</title>
+  <link rel="stylesheet" href="style.css">
+
 </head>
 
+<body>
+  <header>
+    <h1>Carolina Game Day</h1>
+    <p>Get ready for game day!</p>
+  </header>
 
+  <main>
+    <section aria-labelledby="checklist-heading">
+      <h2 id="checklist-heading">Game Day Checklist</h2>
+
+      <form id="checklist-form">
+        <div>
+          <label for="checklist-item">Add a checklist item</label>
+
+          <input
+            type="text"
+            id="checklist-item"
+            name="checklist-item"
+            placeholder="Enter an item"
+            autocomplete="off"
+            required
+          >
+
+          <button type="submit">Add Item</button>
+        </div>
+      </form>
+
+      <ul id="checklist">
+        <!-- Checklist items will be added here. -->
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Carolina Game Day</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
 
