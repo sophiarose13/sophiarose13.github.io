@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
 }
@@ -9,15 +10,18 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: #000000;
+  background-color: #73000a;
   color: #ffffff;
   text-align: center;
 }
 
 /* Header */
+
 header {
   padding: 2rem 1rem;
-  background-color: #73000a;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
   border-bottom: 4px solid #ffffff;
 }
 
@@ -34,17 +38,21 @@ header p {
 }
 
 /* Main content */
+
 main {
   width: min(90%, 700px);
   margin: 2rem auto;
+  text-align: center;
 }
 
 /* Checklist section */
+
 section {
   padding: 2rem;
-  background-color: #111111;
-  border: 2px solid #73000a;
+  background-color: #73000a;
+  border: 2px solid #ffffff;
   border-radius: 10px;
+  text-align: center;
 }
 
 section h2 {
@@ -53,56 +61,66 @@ section h2 {
 }
 
 /* Form */
+
 form {
   margin-bottom: 2rem;
+  text-align: center;
 }
 
 form div {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   gap: 0.75rem;
-  flex-wrap: wrap;
 }
 
 label {
   width: 100%;
-  margin-bottom: 0.25rem;
   color: #ffffff;
   font-weight: bold;
+  text-align: center;
 }
 
 /* Text box */
+
 input[type="text"] {
   width: min(100%, 450px);
   padding: 0.75rem 1rem;
-  border: 2px solid #73000a;
+
+  border: 2px solid #000000;
   border-radius: 6px;
+
   background-color: #ffffff;
   color: #000000;
+
   font-size: 1rem;
+  text-align: center;
 }
 
 input[type="text"]:focus {
   outline: 3px solid #ffffff;
   outline-offset: 2px;
-  border-color: #a0000d;
 }
 
 /* Add button */
+
 button {
-  padding: 0.75rem 1.25rem;
-  border: 2px solid #ffffff;
+  padding: 0.75rem 1.5rem;
+
+  border: 2px solid #000000;
   border-radius: 6px;
-  background-color: #73000a;
+
+  background-color: #000000;
   color: #ffffff;
+
   font-size: 1rem;
   font-weight: bold;
+
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #a0000d;
+  background-color: #222222;
 }
 
 button:focus-visible {
@@ -111,14 +129,18 @@ button:focus-visible {
 }
 
 /* Checklist */
+
 #checklist {
   width: 100%;
   margin: 0;
   padding: 0;
+
   list-style: none;
+  text-align: center;
 }
 
 /* Individual checklist items */
+
 #checklist li {
   display: flex;
   align-items: center;
@@ -130,41 +152,55 @@ button:focus-visible {
   padding: 1rem;
 
   background-color: #000000;
-  border: 2px solid #73000a;
+  color: #ffffff;
+
+  border: 2px solid #ffffff;
   border-radius: 6px;
 
   text-align: center;
 }
 
 /* Checkbox */
+
 #checklist li input[type="checkbox"] {
   width: 1.2rem;
   height: 1.2rem;
+
   accent-color: #73000a;
   cursor: pointer;
 }
 
 /* Checklist item text */
+
 #checklist li label {
   width: auto;
   margin: 0;
+
+  color: #ffffff;
   font-weight: normal;
+  text-align: center;
   cursor: pointer;
 }
 
 /* Footer */
+
 footer {
   margin-top: 2rem;
   padding: 1.5rem;
-  background-color: #73000a;
+
+  background-color: #000000;
+  color: #ffffff;
+
   border-top: 4px solid #ffffff;
+  text-align: center;
 }
 
 footer p {
   margin: 0;
 }
 
-/* Responsive layout */
+/* Mobile layout */
+
 @media (max-width: 600px) {
   header h1 {
     font-size: 2rem;
@@ -174,17 +210,13 @@ footer p {
     padding: 1.25rem;
   }
 
-  form div {
-    flex-direction: column;
-  }
-
   input[type="text"],
   button {
     width: 100%;
   }
 
   #checklist li {
-    justify-content: flex-start;
-    text-align: left;
+    justify-content: center;
+    text-align: center;
   }
 }
