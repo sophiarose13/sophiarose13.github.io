@@ -12,7 +12,7 @@ button1.addEventListener("click",
 
 button2.addEventListener("click",
      () => { mainHeader.textContent = "Our Partners"; 
-        mainText.textContent = "These are our partners.."; });
+        mainText.textContent = "These are our partners."; });
 
 button3.addEventListener("click", 
     () => { mainHeader.textContent = "Volunteer Programs"; 
