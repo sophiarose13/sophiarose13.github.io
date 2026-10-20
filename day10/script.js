@@ -19,7 +19,7 @@ function loadLevel()
     if(retrievedData !== null)
     {
         currentLevel = retrievedData;
-        document.getElementById("level").inner = currentLevel;
+        document.getElementById("level").innerText = currentLevel;
     }
     else
     {
