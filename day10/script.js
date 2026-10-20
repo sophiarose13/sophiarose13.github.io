@@ -6,3 +6,23 @@ function levelUp()
 
     document.getElementById("level").innerHTML = currentLevel;
 }
+
+function saveLevel()
+{
+    localStorage.setItem("savedLevel", currentLevel);
+    alert("Level data saved!");
+}
+
+function loadLevel()
+{
+    let retrievedData = localStorage.getItem("savedLevel");
+    if(retrievedData !== null)
+    {
+        currentLevel = retrievedData;
+        document.getElementById("level").inner = currentLevel;
+    }
+    else
+    {
+        alert("No Save Data Found....");
+    }
+}
