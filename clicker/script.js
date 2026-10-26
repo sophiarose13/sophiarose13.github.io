@@ -15,7 +15,7 @@ let octopusInterns = 0;
 let octopusInternCost = 800;
 
 
-// Write code when the main button is clicked
+// Write code
 function writeCode() {
     linesOfCode += clickPower;
     updateScreen();
@@ -28,6 +28,8 @@ function buyKeyboard() {
         linesOfCode -= upgradeCost;
 
         clickPower += 1;
+
+        // Only increase mechanical keyboard cost
         upgradeCost = Math.ceil(upgradeCost * 1.5);
 
         updateScreen();
@@ -41,6 +43,8 @@ function buyPower() {
         linesOfCode -= powerKeyboardCost;
 
         clickPower += 5;
+
+        // Only increase power keyboard cost
         powerKeyboardCost = Math.ceil(powerKeyboardCost * 1.5);
 
         updateScreen();
@@ -52,8 +56,10 @@ function buyPower() {
 function buyIntern() {
     if (linesOfCode >= internCost) {
         linesOfCode -= internCost;
-
+        
         interns += 1;
+
+        // Only increase regular intern cost
         internCost = Math.ceil(internCost * 1.5);
 
         updateScreen();
@@ -65,8 +71,9 @@ function buyIntern() {
 function buyOctopusIntern() {
     if (linesOfCode >= octopusInternCost) {
         linesOfCode -= octopusInternCost;
+        octopusInterns += 1;
 
-        octopusInterns += 8;
+        // Only increase octopus intern cost
         octopusInternCost = Math.ceil(octopusInternCost * 1.5);
 
         updateScreen();
@@ -85,7 +92,7 @@ setInterval(function () {
 }, 1000);
 
 
-// Update all the displayed values
+// Update all displayed values
 function updateScreen() {
     document.getElementById("score-display").innerText =
         linesOfCode + " lines of code";
@@ -108,3 +115,7 @@ function updateScreen() {
     document.getElementById("cost-octopus-intern").innerText =
         octopusInternCost;
 }
+
+
+// Initialize the screen
+updateScreen();
