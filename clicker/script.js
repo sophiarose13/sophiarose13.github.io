@@ -1,82 +1,110 @@
-//Creating variables for our code
+
 let linesOfCode = 0;
 
+// Manual upgrades
 let clickPower = 1;
 let upgradeCost = 50;
 
+let powerKeyboardCost = 200;
+
+// Automatic upgrades
 let interns = 0;
 let internCost = 100;
 
-function writeCode() 
-{
-    linesOfCode = linesOfCode + clickPower;
+let octopusInterns = 0;
+let octopusInternCost = 800;
+
+
+// Write code when the main button is clicked
+function writeCode() {
+    linesOfCode += clickPower;
     updateScreen();
 }
 
-function buyKeyboard()
-{
-    if(linesOfCode >= upgradeCost)
-    {
-        linesOfCode = linesOfCode - upgradeCost;
-        clickPower = clickPower + 1;
-        upgradeCost = upgradeCost * 1.5;
-        updateScreen();
-    }
-}
 
-function buyIntern()
-{
-    if(linesOfCode >= internCost)
-    {
-        linesOfCode = linesOfCode - internCost;
-        interns = interns + 1;
-        internCost = internCost * 1.5;
+// Buy a mechanical keyboard
+function buyKeyboard() {
+    if (linesOfCode >= upgradeCost) {
+        linesOfCode -= upgradeCost;
+
+        clickPower += 1;
+        upgradeCost = Math.ceil(upgradeCost * 1.5);
+
         updateScreen();
     }
 }
 
 
-function buyPower()
-{
-    if(linesOfCode >= upgradeCost)
-    {
-        linesOfCode = linesOfCode - upgradeCost;
-        clickPower = clickPower + 5;
-        upgradeCost = upgradeCost * 1.5;
+// Buy a power keyboard
+function buyPower() {
+    if (linesOfCode >= powerKeyboardCost) {
+        linesOfCode -= powerKeyboardCost;
+
+        clickPower += 5;
+        powerKeyboardCost = Math.ceil(powerKeyboardCost * 1.5);
+
         updateScreen();
     }
 }
 
-function buyOctopusIntern()
-{
-    if(linesOfCode >= upgradeCost)
-    {
-        linesOfCode = linesOfCode - upgradeCost;
-        clickPower = clickPower + 8;
-        upgradeCost = upgradeCost * 1.5;
+
+// Hire a regular intern
+function buyIntern() {
+    if (linesOfCode >= internCost) {
+        linesOfCode -= internCost;
+
+        interns += 1;
+        internCost = Math.ceil(internCost * 1.5);
+
         updateScreen();
     }
 }
 
-setInterval(function() {
-    if(interns > 0)
-    {
-        linesOfCode = linesOfCode + interns;
+
+// Hire an octopus intern
+function buyOctopusIntern() {
+    if (linesOfCode >= octopusInternCost) {
+        linesOfCode -= octopusInternCost;
+
+        octopusInterns += 8;
+        octopusInternCost = Math.ceil(octopusInternCost * 1.5);
+
         updateScreen();
     }
-}, 
-1000
-);
+}
 
-function updateScreen()
-{
-    document.getElementById("score-display").innerText = linesOfCode + " lines of code";
 
-    document.getElementById("power-display").innerText = clickPower;
-    document.getElementById("cost-display").innerText = upgradeCost;
-    document.getElementById("cost-power-display").innerText = upgradeCost;
+// Generate code automatically every second
+setInterval(function () {
+    const codePerSecond = interns + octopusInterns * 8;
 
-    document.getElementById("intern-display").innerText = interns;
-    document.getElementById("intern-display-cost").innerText = internCost;
-    document.getElementById("cost-octopus-intern").innerText = interncost;
+    if (codePerSecond > 0) {
+        linesOfCode += codePerSecond;
+        updateScreen();
+    }
+}, 1000);
+
+
+// Update all the displayed values
+function updateScreen() {
+    document.getElementById("score-display").innerText =
+        linesOfCode + " lines of code";
+
+    document.getElementById("power-display").innerText =
+        clickPower;
+
+    document.getElementById("cost-display").innerText =
+        upgradeCost;
+
+    document.getElementById("cost-power-display").innerText =
+        powerKeyboardCost;
+
+    document.getElementById("intern-display").innerText =
+        interns + octopusInterns;
+
+    document.getElementById("cost-intern-display").innerText =
+        internCost;
+
+    document.getElementById("cost-octopus-intern").innerText =
+        octopusInternCost;
 }
