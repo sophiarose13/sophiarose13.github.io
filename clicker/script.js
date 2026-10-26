@@ -35,15 +35,27 @@ function buyIntern()
     }
 }
 
-function updateScreen()
+
+function buyPower()
 {
-    document.getElementById("score-display").innerText = linesOfCode + " lines of code";
+    if(linesOfCode >= upgradeCost)
+    {
+        linesOfCode = linesOfCode - upgradeCost;
+        clickPower = clickPower + 5;
+        upgradeCost = upgradeCost * 1.5;
+        updateScreen();
+    }
+}
 
-    document.getElementById("power-display").innerText = clickPower;
-    document.getElementById("cost-display").innerText = upgradeCost;
-
-    document.getElementById("intern-display").innerText = interns;
-    document.getElementById("intern-display-cost").innerText = internCost;
+function buyOctopusIntern()
+{
+    if(linesOfCode >= upgradeCost)
+    {
+        linesOfCode = linesOfCode - upgradeCost;
+        clickPower = clickPower + 8;
+        upgradeCost = upgradeCost * 1.5;
+        updateScreen();
+    }
 }
 
 setInterval(function() {
@@ -56,7 +68,15 @@ setInterval(function() {
 1000
 );
 
-function buyPower()
+function updateScreen()
+{
+    document.getElementById("score-display").innerText = linesOfCode + " lines of code";
 
+    document.getElementById("power-display").innerText = clickPower;
+    document.getElementById("cost-display").innerText = upgradeCost;
+    document.getElementById("cost-power-display").innerText = upgradeCost;
 
-function buyOctopus()
+    document.getElementById("intern-display").innerText = interns;
+    document.getElementById("intern-display-cost").innerText = internCost;
+    document.getElementById("cost-octopus-intern").innerText = interncost;
+}
